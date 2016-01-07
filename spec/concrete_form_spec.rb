@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry-rails'
 
 feature 'concrete form' do
   it 'uses the form_tag helper' do
@@ -12,6 +13,8 @@ feature 'concrete form' do
   context 'submitting a form for new concrete' do
     it 'generates correctly structured params' do
       visit new_concrete_path
+
+
 
       mix_type      = 'anchoring'
       color         = 'brown'
@@ -51,7 +54,7 @@ feature 'concrete form' do
         color: 'Red',
         cost_per_yard: 9800
       })
-
+      
       visit edit_concrete_path(concrete)
 
       click_button 'Update Concrete'
